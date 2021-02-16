@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Audio Unit View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AudioUnitViewController" customModule="MIDIAudioUnit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your AudioUnit UI goes here!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5c-MY-xUb">
+                                <rect key="frame" x="93" y="64" width="228" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JTG-EK-6Sy">
+                                <rect key="frame" x="57" y="177" width="300" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="300" id="yeo-dd-Zc0"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="-2"/>
+                                    <segment title="-1"/>
+                                    <segment title="0"/>
+                                    <segment title="+1"/>
+                                    <segment title="+2"/>
+                                </segments>
+                                <connections>
+                                    <action selector="octaveControlDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="lvy-Qj-D6v"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transpose Octave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teQ-g4-9ov">
+                                <rect key="frame" x="138" y="136" width="138" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="u2v-qu-mbu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j5c-MY-xUb" firstAttribute="centerX" secondItem="u2v-qu-mbu" secondAttribute="centerX" id="GEu-gu-ROi"/>
+                            <constraint firstItem="teQ-g4-9ov" firstAttribute="top" secondItem="j5c-MY-xUb" secondAttribute="bottom" constant="51.5" id="PzA-pE-VBn"/>
+                            <constraint firstItem="JTG-EK-6Sy" firstAttribute="centerX" secondItem="u2v-qu-mbu" secondAttribute="centerX" id="SYF-qD-nb5"/>
+                            <constraint firstItem="teQ-g4-9ov" firstAttribute="centerX" secondItem="u2v-qu-mbu" secondAttribute="centerX" id="k6N-f2-taf"/>
+                            <constraint firstItem="j5c-MY-xUb" firstAttribute="top" secondItem="u2v-qu-mbu" secondAttribute="top" constant="20" id="sbA-2i-4eA"/>
+                            <constraint firstItem="JTG-EK-6Sy" firstAttribute="top" secondItem="teQ-g4-9ov" secondAttribute="bottom" constant="20" id="xq6-yu-zgY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="octaveOffsetControl" destination="JTG-EK-6Sy" id="N1n-rx-KQj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

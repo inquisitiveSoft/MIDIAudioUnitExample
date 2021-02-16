@@ -7,17 +7,7 @@
 
 import AVFoundation
 
-
-class RelayMIDIAudioUnit: MIDIAudioUnit {
-
-    override func handleMIDIEvent(_ event: AUMIDIEvent, timestamp: UnsafePointer<AudioTimeStamp>) {
-        // Simply relaying all MIDI events
-        sendMIDIEvent(eventSampleTime: event.eventSampleTime, cable: event.cable, length: Int(event.length), midiData: event.data)
-    }
-    
-}
-
-
+/// A basis for a Audio Unit that listens to and sends midi events. Designed to be sub-classed.
 class MIDIAudioUnit: AUAudioUnit {
     typealias InOutAudioBusses = (inputBusses: AUAudioUnitBusArray, outputBusses: AUAudioUnitBusArray)
     
