@@ -15,6 +15,16 @@
 		4A83A5EF25D9F26F00B39A63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83A5ED25D9F26F00B39A63 /* LaunchScreen.storyboard */; };
 		4A83A5FA25D9F26F00B39A63 /* MIDIAudioUnitExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A5F925D9F26F00B39A63 /* MIDIAudioUnitExampleTests.swift */; };
 		4A83A60525D9F26F00B39A63 /* MIDIAudioUnitExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A60425D9F26F00B39A63 /* MIDIAudioUnitExampleUITests.swift */; };
+		4A83A62225D9F2BB00B39A63 /* DSPKernel.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 4A83A62125D9F2BB00B39A63 /* DSPKernel.hpp */; };
+		4A83A62425D9F2BB00B39A63 /* DSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A62325D9F2BB00B39A63 /* DSPKernel.mm */; };
+		4A83A62625D9F2BB00B39A63 /* BufferedAudioBus.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 4A83A62525D9F2BB00B39A63 /* BufferedAudioBus.hpp */; };
+		4A83A62925D9F2BB00B39A63 /* MIDIAudioUnitDSPKernel.hpp in Resources */ = {isa = PBXBuildFile; fileRef = 4A83A62825D9F2BB00B39A63 /* MIDIAudioUnitDSPKernel.hpp */; };
+		4A83A62B25D9F2BB00B39A63 /* MIDIAudioUnitDSPKernel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A62A25D9F2BB00B39A63 /* MIDIAudioUnitDSPKernel.mm */; };
+		4A83A62E25D9F2BB00B39A63 /* AudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A62D25D9F2BB00B39A63 /* AudioUnitViewController.swift */; };
+		4A83A63025D9F2BB00B39A63 /* MIDIAudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A62F25D9F2BB00B39A63 /* MIDIAudioUnit.swift */; };
+		4A83A63225D9F2BB00B39A63 /* MIDIAudioUnitParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A63125D9F2BB00B39A63 /* MIDIAudioUnitParameters.swift */; };
+		4A83A63625D9F2BB00B39A63 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83A63425D9F2BB00B39A63 /* MainInterface.storyboard */; };
+		4A83A63A25D9F2BB00B39A63 /* MIDIAudioUnit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4A83A61925D9F2BB00B39A63 /* MIDIAudioUnit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +42,28 @@
 			remoteGlobalIDString = 4A83A5DE25D9F26E00B39A63;
 			remoteInfo = MIDIAudioUnitExample;
 		};
+		4A83A63825D9F2BB00B39A63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A83A5D725D9F26E00B39A63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A83A61825D9F2BB00B39A63;
+			remoteInfo = MIDIAudioUnit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4A83A63E25D9F2BB00B39A63 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4A83A63A25D9F2BB00B39A63 /* MIDIAudioUnit.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4A83A5DF25D9F26E00B39A63 /* MIDIAudioUnitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIDIAudioUnitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +80,19 @@
 		4A83A60025D9F26F00B39A63 /* MIDIAudioUnitExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MIDIAudioUnitExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A83A60425D9F26F00B39A63 /* MIDIAudioUnitExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIAudioUnitExampleUITests.swift; sourceTree = "<group>"; };
 		4A83A60625D9F26F00B39A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A83A61925D9F2BB00B39A63 /* MIDIAudioUnit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MIDIAudioUnit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A83A62125D9F2BB00B39A63 /* DSPKernel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DSPKernel.hpp; sourceTree = "<group>"; };
+		4A83A62325D9F2BB00B39A63 /* DSPKernel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DSPKernel.mm; sourceTree = "<group>"; };
+		4A83A62525D9F2BB00B39A63 /* BufferedAudioBus.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BufferedAudioBus.hpp; sourceTree = "<group>"; };
+		4A83A62725D9F2BB00B39A63 /* MIDIAudioUnitDSPKernelAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIDIAudioUnitDSPKernelAdapter.h; sourceTree = "<group>"; };
+		4A83A62825D9F2BB00B39A63 /* MIDIAudioUnitDSPKernel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MIDIAudioUnitDSPKernel.hpp; sourceTree = "<group>"; };
+		4A83A62A25D9F2BB00B39A63 /* MIDIAudioUnitDSPKernel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MIDIAudioUnitDSPKernel.mm; sourceTree = "<group>"; };
+		4A83A62D25D9F2BB00B39A63 /* AudioUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewController.swift; sourceTree = "<group>"; };
+		4A83A62F25D9F2BB00B39A63 /* MIDIAudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MIDIAudioUnit.swift; path = "Audio Unit/MIDIAudioUnit.swift"; sourceTree = "<group>"; };
+		4A83A63125D9F2BB00B39A63 /* MIDIAudioUnitParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MIDIAudioUnitParameters.swift; path = "Audio Unit/MIDIAudioUnitParameters.swift"; sourceTree = "<group>"; };
+		4A83A63325D9F2BB00B39A63 /* MIDIAudioUnit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MIDIAudioUnit-Bridging-Header.h"; sourceTree = "<group>"; };
+		4A83A63525D9F2BB00B39A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4A83A63725D9F2BB00B39A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +117,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4A83A61625D9F2BB00B39A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +133,7 @@
 				4A83A5E125D9F26E00B39A63 /* MIDIAudioUnitExample */,
 				4A83A5F825D9F26F00B39A63 /* MIDIAudioUnitExampleTests */,
 				4A83A60325D9F26F00B39A63 /* MIDIAudioUnitExampleUITests */,
+				4A83A61A25D9F2BB00B39A63 /* MIDIAudioUnit */,
 				4A83A5E025D9F26E00B39A63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +144,7 @@
 				4A83A5DF25D9F26E00B39A63 /* MIDIAudioUnitExample.app */,
 				4A83A5F525D9F26F00B39A63 /* MIDIAudioUnitExampleTests.xctest */,
 				4A83A60025D9F26F00B39A63 /* MIDIAudioUnitExampleUITests.xctest */,
+				4A83A61925D9F2BB00B39A63 /* MIDIAudioUnit.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +189,49 @@
 			path = MIDIAudioUnitExampleUITests;
 			sourceTree = "<group>";
 		};
+		4A83A61A25D9F2BB00B39A63 /* MIDIAudioUnit */ = {
+			isa = PBXGroup;
+			children = (
+				4A83A62F25D9F2BB00B39A63 /* MIDIAudioUnit.swift */,
+				4A83A63125D9F2BB00B39A63 /* MIDIAudioUnitParameters.swift */,
+				4A83A63325D9F2BB00B39A63 /* MIDIAudioUnit-Bridging-Header.h */,
+				4A83A63425D9F2BB00B39A63 /* MainInterface.storyboard */,
+				4A83A63725D9F2BB00B39A63 /* Info.plist */,
+				4A83A61F25D9F2BB00B39A63 /* DSP */,
+				4A83A62C25D9F2BB00B39A63 /* UI */,
+			);
+			path = MIDIAudioUnit;
+			sourceTree = "<group>";
+		};
+		4A83A61F25D9F2BB00B39A63 /* DSP */ = {
+			isa = PBXGroup;
+			children = (
+				4A83A62825D9F2BB00B39A63 /* MIDIAudioUnitDSPKernel.hpp */,
+				4A83A62A25D9F2BB00B39A63 /* MIDIAudioUnitDSPKernel.mm */,
+				4A83A62025D9F2BB00B39A63 /* Helpers */,
+			);
+			path = DSP;
+			sourceTree = "<group>";
+		};
+		4A83A62025D9F2BB00B39A63 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4A83A62125D9F2BB00B39A63 /* DSPKernel.hpp */,
+				4A83A62325D9F2BB00B39A63 /* DSPKernel.mm */,
+				4A83A62525D9F2BB00B39A63 /* BufferedAudioBus.hpp */,
+				4A83A62725D9F2BB00B39A63 /* MIDIAudioUnitDSPKernelAdapter.h */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4A83A62C25D9F2BB00B39A63 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4A83A62D25D9F2BB00B39A63 /* AudioUnitViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,10 +242,12 @@
 				4A83A5DB25D9F26E00B39A63 /* Sources */,
 				4A83A5DC25D9F26E00B39A63 /* Frameworks */,
 				4A83A5DD25D9F26E00B39A63 /* Resources */,
+				4A83A63E25D9F2BB00B39A63 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4A83A63925D9F2BB00B39A63 /* PBXTargetDependency */,
 			);
 			name = MIDIAudioUnitExample;
 			productName = MIDIAudioUnitExample;
@@ -192,6 +290,23 @@
 			productReference = 4A83A60025D9F26F00B39A63 /* MIDIAudioUnitExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		4A83A61825D9F2BB00B39A63 /* MIDIAudioUnit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A83A63B25D9F2BB00B39A63 /* Build configuration list for PBXNativeTarget "MIDIAudioUnit" */;
+			buildPhases = (
+				4A83A61525D9F2BB00B39A63 /* Sources */,
+				4A83A61625D9F2BB00B39A63 /* Frameworks */,
+				4A83A61725D9F2BB00B39A63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MIDIAudioUnit;
+			productName = MIDIAudioUnit;
+			productReference = 4A83A61925D9F2BB00B39A63 /* MIDIAudioUnit.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -212,6 +327,9 @@
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 4A83A5DE25D9F26E00B39A63;
 					};
+					4A83A61825D9F2BB00B39A63 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 				};
 			};
 			buildConfigurationList = 4A83A5DA25D9F26E00B39A63 /* Build configuration list for PBXProject "MIDIAudioUnitExample" */;
@@ -230,6 +348,7 @@
 				4A83A5DE25D9F26E00B39A63 /* MIDIAudioUnitExample */,
 				4A83A5F425D9F26F00B39A63 /* MIDIAudioUnitExampleTests */,
 				4A83A5FF25D9F26F00B39A63 /* MIDIAudioUnitExampleUITests */,
+				4A83A61825D9F2BB00B39A63 /* MIDIAudioUnit */,
 			);
 		};
 /* End PBXProject section */
@@ -256,6 +375,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A83A61725D9F2BB00B39A63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A83A62925D9F2BB00B39A63 /* MIDIAudioUnitDSPKernel.hpp in Resources */,
+				4A83A63625D9F2BB00B39A63 /* MainInterface.storyboard in Resources */,
+				4A83A62225D9F2BB00B39A63 /* DSPKernel.hpp in Resources */,
+				4A83A62625D9F2BB00B39A63 /* BufferedAudioBus.hpp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +418,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4A83A61525D9F2BB00B39A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A83A62425D9F2BB00B39A63 /* DSPKernel.mm in Sources */,
+				4A83A62E25D9F2BB00B39A63 /* AudioUnitViewController.swift in Sources */,
+				4A83A62B25D9F2BB00B39A63 /* MIDIAudioUnitDSPKernel.mm in Sources */,
+				4A83A63025D9F2BB00B39A63 /* MIDIAudioUnit.swift in Sources */,
+				4A83A63225D9F2BB00B39A63 /* MIDIAudioUnitParameters.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -301,6 +443,11 @@
 			target = 4A83A5DE25D9F26E00B39A63 /* MIDIAudioUnitExample */;
 			targetProxy = 4A83A60125D9F26F00B39A63 /* PBXContainerItemProxy */;
 		};
+		4A83A63925D9F2BB00B39A63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A83A61825D9F2BB00B39A63 /* MIDIAudioUnit */;
+			targetProxy = 4A83A63825D9F2BB00B39A63 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -310,6 +457,14 @@
 				4A83A5EE25D9F26F00B39A63 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4A83A63425D9F2BB00B39A63 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A83A63525D9F2BB00B39A63 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -434,6 +589,7 @@
 		4A83A60A25D9F26F00B39A63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -455,6 +611,7 @@
 		4A83A60B25D9F26F00B39A63 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -557,6 +714,46 @@
 			};
 			name = Release;
 		};
+		4A83A63C25D9F2BB00B39A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D92MT22EX5;
+				INFOPLIST_FILE = MIDIAudioUnit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = inquisitiveSoftware.MIDIAudioUnitExample.MIDIAudioUnit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MIDIAudioUnit/MIDIAudioUnit-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A83A63D25D9F2BB00B39A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D92MT22EX5;
+				INFOPLIST_FILE = MIDIAudioUnit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = inquisitiveSoftware.MIDIAudioUnitExample.MIDIAudioUnit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MIDIAudioUnit/MIDIAudioUnit-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -592,6 +789,15 @@
 			buildConfigurations = (
 				4A83A61025D9F26F00B39A63 /* Debug */,
 				4A83A61125D9F26F00B39A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A83A63B25D9F2BB00B39A63 /* Build configuration list for PBXNativeTarget "MIDIAudioUnit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A83A63C25D9F2BB00B39A63 /* Debug */,
+				4A83A63D25D9F2BB00B39A63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
