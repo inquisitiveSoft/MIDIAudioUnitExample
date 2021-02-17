@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct TransposeOctaveView: View {
-    @ObservedObject var octaveController: AudioUnitViewController
+    @ObservedObject var transposeOctaveCoordinator: TransposeOctaveCoordinator
     
     var body: some View {
         VStack {
             Text("Octave")
-            Picker(selection: $octaveController.octaveOffset, label: Text("Picker")) {
+            Picker(selection: $transposeOctaveCoordinator.octaveOffset, label: Text("Picker")) {
                 Text("-2").tag(-2)
                 Text("-1").tag(-1)
                 Text("0").tag(0)
