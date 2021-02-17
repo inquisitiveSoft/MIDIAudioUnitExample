@@ -23,11 +23,12 @@
 		4A83A62E25D9F2BB00B39A63 /* AudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A62D25D9F2BB00B39A63 /* AudioUnitViewController.swift */; };
 		4A83A63025D9F2BB00B39A63 /* MIDIAudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A62F25D9F2BB00B39A63 /* MIDIAudioUnit.swift */; };
 		4A83A63225D9F2BB00B39A63 /* MIDIAudioUnitParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A63125D9F2BB00B39A63 /* MIDIAudioUnitParameters.swift */; };
-		4A83A63625D9F2BB00B39A63 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83A63425D9F2BB00B39A63 /* MainInterface.storyboard */; };
 		4A83A63A25D9F2BB00B39A63 /* MIDIAudioUnit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4A83A61925D9F2BB00B39A63 /* MIDIAudioUnit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4A83A67525DBF11A00B39A63 /* TransposeOctaveMIDIAudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A67425DBF11A00B39A63 /* TransposeOctaveMIDIAudioUnit.swift */; };
 		4A83A68225DBF59F00B39A63 /* MIDIStatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A68125DBF59F00B39A63 /* MIDIStatusType.swift */; };
 		4A83A68C25DBF60000B39A63 /* MIDIByte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A68B25DBF60000B39A63 /* MIDIByte.swift */; };
+		4A83A6EF25DC84C800B39A63 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83A6EE25DC84C800B39A63 /* MainInterface.storyboard */; };
+		4A83A70125DC874700B39A63 /* TransposeOctaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83A6E425DC7F5B00B39A63 /* TransposeOctaveView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,11 +95,12 @@
 		4A83A62F25D9F2BB00B39A63 /* MIDIAudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MIDIAudioUnit.swift; path = "Audio Unit/MIDIAudioUnit.swift"; sourceTree = "<group>"; };
 		4A83A63125D9F2BB00B39A63 /* MIDIAudioUnitParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MIDIAudioUnitParameters.swift; path = "Audio Unit/MIDIAudioUnitParameters.swift"; sourceTree = "<group>"; };
 		4A83A63325D9F2BB00B39A63 /* MIDIAudioUnit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MIDIAudioUnit-Bridging-Header.h"; sourceTree = "<group>"; };
-		4A83A63525D9F2BB00B39A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		4A83A63725D9F2BB00B39A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A83A67425DBF11A00B39A63 /* TransposeOctaveMIDIAudioUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransposeOctaveMIDIAudioUnit.swift; path = "Audio Unit/TransposeOctaveMIDIAudioUnit.swift"; sourceTree = "<group>"; };
 		4A83A68125DBF59F00B39A63 /* MIDIStatusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIStatusType.swift; sourceTree = "<group>"; };
 		4A83A68B25DBF60000B39A63 /* MIDIByte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDIByte.swift; sourceTree = "<group>"; };
+		4A83A6E425DC7F5B00B39A63 /* TransposeOctaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransposeOctaveView.swift; sourceTree = "<group>"; };
+		4A83A6EE25DC84C800B39A63 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainInterface.storyboard; path = ../../../../../../../.Trash/MainInterface.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,7 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				4A83A62D25D9F2BB00B39A63 /* AudioUnitViewController.swift */,
-				4A83A63425D9F2BB00B39A63 /* MainInterface.storyboard */,
+				4A83A6E425DC7F5B00B39A63 /* TransposeOctaveView.swift */,
+				4A83A6EE25DC84C800B39A63 /* MainInterface.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -400,7 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A83A62925D9F2BB00B39A63 /* MIDIAudioUnitDSPKernel.hpp in Resources */,
-				4A83A63625D9F2BB00B39A63 /* MainInterface.storyboard in Resources */,
+				4A83A6EF25DC84C800B39A63 /* MainInterface.storyboard in Resources */,
 				4A83A62225D9F2BB00B39A63 /* DSPKernel.hpp in Resources */,
 				4A83A62625D9F2BB00B39A63 /* BufferedAudioBus.hpp in Resources */,
 			);
@@ -442,6 +445,7 @@
 				4A83A62425D9F2BB00B39A63 /* DSPKernel.mm in Sources */,
 				4A83A62E25D9F2BB00B39A63 /* AudioUnitViewController.swift in Sources */,
 				4A83A62B25D9F2BB00B39A63 /* MIDIAudioUnitDSPKernel.mm in Sources */,
+				4A83A70125DC874700B39A63 /* TransposeOctaveView.swift in Sources */,
 				4A83A67525DBF11A00B39A63 /* TransposeOctaveMIDIAudioUnit.swift in Sources */,
 				4A83A68225DBF59F00B39A63 /* MIDIStatusType.swift in Sources */,
 				4A83A63025D9F2BB00B39A63 /* MIDIAudioUnit.swift in Sources */,
@@ -477,14 +481,6 @@
 				4A83A5EE25D9F26F00B39A63 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		4A83A63425D9F2BB00B39A63 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4A83A63525D9F2BB00B39A63 /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
