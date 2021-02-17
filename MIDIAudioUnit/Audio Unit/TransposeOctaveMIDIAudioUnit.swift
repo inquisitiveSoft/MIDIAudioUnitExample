@@ -19,6 +19,27 @@ class TransposeOctaveMIDIAudioUnit: MIDIAudioUnit {
                 return "octave"
             }
         }
+        
+        func parameterDescription(at address: AUParameterAddress) -> AudioUnitParameterDescription {
+            switch self {
+            case .octave:
+                let description = AudioUnitParameterDescription(
+                    identifier: self.identifier,
+                    name: NSLocalizedString("Octave", comment: "Octave Control"),
+                    address: address,
+                    min: -2,
+                    max: 2,
+                    defaultValue: 0,
+                    unit: .octaves,
+                    unitName: nil,
+                    flags: [.flag_IsReadable, .flag_IsWritable],
+                    valueStrings: nil,
+                    dependentParameters: nil
+                )
+                
+                return description
+            }
+        }
     }
     
     private var octaveOffset: Int = 0
@@ -53,37 +74,13 @@ class TransposeOctaveMIDIAudioUnit: MIDIAudioUnit {
         return AUParameterTree.createTree(withChildren: [octaveParameter])
     }
     
-    typealias AudioUnitParameterDescription = (
-        identifier: String,
-        name: String,
-        address: AUParameterAddress,
-        min: AUValue,
-        max: AUValue,
-        defaultValue: AUValue,
-        unit: AudioUnitParameterUnit,
-        unitName: String?,
-        flags: AudioUnitParameterOptions,
-        valueStrings: [String]?,
-        dependentParameters: [NSNumber]?
-    )
+
 
     
     private func createParameter(from parameterKey: ParameterKey) -> AUParameter {
         switch parameterKey {
         case .octave:
-            let description: AudioUnitParameterDescription = (
-                identifier: ParameterKey.octave.identifier,
-                name: NSLocalizedString("Octave", comment: "Octave Control"),
-                address: ParameterKey.octave.rawValue,
-                min: -2,
-                max: 2,
-                defaultValue: 0,
-                unit: .octaves,
-                unitName: nil,
-                flags: [.flag_IsReadable, .flag_IsWritable],
-                valueStrings: nil,
-                dependentParameters: nil
-            )
+            let description = parameterKey.parameterDescription(at: 0)
             
             let parameter = AUParameterTree.createParameter(withIdentifier: description.identifier, name: description.name, address: description.address, min: description.min, max: description.max, unit: description.unit, unitName: description.name, flags: description.flags, valueStrings: description.valueStrings, dependentParameters: description.dependentParameters)
             
