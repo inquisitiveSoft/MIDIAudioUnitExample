@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        Text("The AudioUnit can be accessed from within a host audio app")
             .padding()
     }
 }

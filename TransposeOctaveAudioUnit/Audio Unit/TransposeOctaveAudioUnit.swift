@@ -1,6 +1,6 @@
 //
-//  ExampleAudioUnit.swift
-//  MIDIAudioUnit
+//  TransposeOctaveAudioUnit.swift
+//  TransposeOctaveAudioUnit
 //
 //  Created by Harry Jordan on 16/02/2021.
 //
@@ -9,7 +9,7 @@ import AVFoundation
 
 /// An Audio Unit that relays MIDI events
 /// Transposing notes based on a control in the UI
-class TransposeOctaveMIDIAudioUnit: MIDIAudioUnit {
+class TransposeOctaveAudioUnit: MIDIAudioUnit {
     enum ParameterKey: AUParameterAddress {
         case octave
         
@@ -74,9 +74,6 @@ class TransposeOctaveMIDIAudioUnit: MIDIAudioUnit {
         return AUParameterTree.createTree(withChildren: [octaveParameter])
     }
     
-
-
-    
     private func createParameter(from parameterKey: ParameterKey) -> AUParameter {
         switch parameterKey {
         case .octave:
@@ -105,13 +102,11 @@ class TransposeOctaveMIDIAudioUnit: MIDIAudioUnit {
     
 }
 
+/// An Audio Unit that simply relays all MIDI events. Not currently used
 class RelayMIDIAudioUnit: MIDIAudioUnit {
-    // An Audio Unit that simply relays all MIDI events
     
     override func handleMIDIEvent(_ event: AUMIDIEvent, timestamp: UnsafePointer<AudioTimeStamp>) {
         sendMIDIEvent(eventSampleTime: event.eventSampleTime, cable: event.cable, length: Int(event.length), midiData: event.data)
     }
     
 }
-
-

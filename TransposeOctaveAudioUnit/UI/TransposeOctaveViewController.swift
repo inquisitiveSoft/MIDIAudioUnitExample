@@ -19,7 +19,7 @@ public class TransposeOctaveViewController: AUViewController, AUAudioUnitFactory
     }
     
     public func createAudioUnit(with componentDescription: AudioComponentDescription) throws -> AUAudioUnit {
-        let audioUnit = try TransposeOctaveMIDIAudioUnit(componentDescription: componentDescription)
+        let audioUnit = try TransposeOctaveAudioUnit(componentDescription: componentDescription)
         
         coordinator = TransposeOctaveCoordinator(audioUnit: audioUnit)
         

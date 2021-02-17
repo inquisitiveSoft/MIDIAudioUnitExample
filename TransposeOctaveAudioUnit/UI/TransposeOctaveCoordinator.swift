@@ -22,23 +22,19 @@ class TransposeOctaveCoordinator: ObservableObject {
     init(audioUnit: AUAudioUnit) {
         self.audioUnit = audioUnit
         
-        DispatchQueue.main.async { [weak self] in
-            self?.bindParameters()
-        }
+        bindParameters()
     }
     
     private func bindParameters() {
         // Get the parameter tree and add observers for any parameters that the UI needs to keep in sync with the AudioUnit
         guard let parameterTree = audioUnit.parameterTree else { return }
         
-        let octaveParameter = parameterTree.value(forKey: TransposeOctaveMIDIAudioUnit.ParameterKey.octave.identifier) as? AUParameter
+        let octaveParameter = parameterTree.value(forKey: TransposeOctaveAudioUnit.ParameterKey.octave.identifier) as? AUParameter
         self.octaveParameter = octaveParameter
         
         // Observe major state changes like a user selecting a user preset
-        parameterObservation = audioUnit.observe(\.allParameterValues) { object, change in
-            DispatchQueue.main.async { [weak self] in
-                self?.parametersDidChange()
-            }
+        parameterObservation = audioUnit.observe(\.allParameterValues) { [weak self] (object, change) in
+            self?.parametersDidChange()
         }
         
         parametersDidChange()
@@ -46,8 +42,11 @@ class TransposeOctaveCoordinator: ObservableObject {
     
     // Called when things change from the AU side of things, for instance switching presets
     private func parametersDidChange() {
-        if let octaveParameter = octaveParameter {
-            octaveOffset = Int(round(octaveParameter.value))
+        // Since octaveOffset is observed by the UI, any changes need to be done on the main thread
+        DispatchQueue.main.async { [weak self] in
+            if let octaveParameter = self?.octaveParameter {
+                self?.octaveOffset = Int(round(octaveParameter.value))
+            }
         }
     }
     

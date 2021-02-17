@@ -31,8 +31,7 @@ class MIDIAudioUnit: AUAudioUnit {
         set { _parameterTree = newValue }
     }
     
-    private var midiNoteDataByte1, midiNoteDataByte2, midiNoteDataByte3: UnsafeMutablePointer<UInt8>!
-
+    private var midiNoteDataByte2, midiNoteDataByte3: UnsafeMutablePointer<UInt8>!
 
     override init(componentDescription: AudioComponentDescription, options: AudioComponentInstantiationOptions = []) throws {
         try super.init(componentDescription: componentDescription, options: options)
@@ -47,6 +46,7 @@ class MIDIAudioUnit: AUAudioUnit {
             throw MIDIAudioUnitError.unableToCreateAudioFormat
         }
         
+        // Even though you're not sending audio.. it seems to need audio busses
         let inputBus = try AUAudioUnitBus(format: audioFormat)
         let outputBus = try AUAudioUnitBus(format: audioFormat)
         
@@ -77,7 +77,6 @@ class MIDIAudioUnit: AUAudioUnit {
     open override var midiOutputNames: [String] {
         return [NSLocalizedString("Out", comment: "Primary MIDI out")]
     }
-    
 
     open override func allocateRenderResources() throws {
         try super.allocateRenderResources()
@@ -87,7 +86,6 @@ class MIDIAudioUnit: AUAudioUnit {
         _midiOutputEventBlock = self.midiOutputEventBlock
         
         // Pointers to use for MIDI note data
-        midiNoteDataByte1 = UnsafeMutablePointer<UInt8>.allocate(capacity: 1)
         midiNoteDataByte2 = UnsafeMutablePointer<UInt8>.allocate(capacity: 2)
         midiNoteDataByte3 = UnsafeMutablePointer<UInt8>.allocate(capacity: 3)
     }
@@ -98,7 +96,6 @@ class MIDIAudioUnit: AUAudioUnit {
         _transportStateBlock = nil
         _midiOutputEventBlock = nil
         
-        midiNoteDataByte1 = nil
         midiNoteDataByte2 = nil
         midiNoteDataByte3 = nil
         
@@ -138,11 +135,8 @@ class MIDIAudioUnit: AUAudioUnit {
     
     @discardableResult open func sendMIDIEvent(eventSampleTime: AUEventSampleTime, cable: UInt8, length: Int, midiData: (UInt8, UInt8, UInt8)) -> OSStatus {
         // Using the midiNoteDataByte# variables to avoid allocating memory within the realtime function
+        // Expect midi notes to have either 2 or 3 bytes
         switch length {
-        case 1:
-            midiNoteDataByte1[0] = midiData.0
-            return _midiOutputEventBlock(eventSampleTime, cable, length, midiNoteDataByte1)
-
         case 2:
             midiNoteDataByte2[0] = midiData.0
             midiNoteDataByte2[1] = midiData.1
